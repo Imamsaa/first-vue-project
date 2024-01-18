@@ -43,7 +43,7 @@ var app = new Vue({
                 });
             }
 
-            if(productExist.length){
+            if(productExist()){
                 this.cart[productIndex].qty++
             }else{
                 this.cart.push(
