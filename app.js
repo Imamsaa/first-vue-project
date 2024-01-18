@@ -32,8 +32,7 @@ var app = new Vue({
         addItem : function(product) {
 
             var productIndex;
-            var productExist = () => {
-                this.cart.filter((item, index) => {
+            var productExist = this.cart.filter((item, index) => {
                     if (item.product.id == Number(product.id)) {
                         productIndex = index;
                         return true;
@@ -41,9 +40,8 @@ var app = new Vue({
                         return false;
                     }
                 });
-            }
 
-            if(productExist()){
+            if(productExist.length){
                 this.cart[productIndex].qty++
             }else{
                 this.cart.push(
